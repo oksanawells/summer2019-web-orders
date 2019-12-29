@@ -30,5 +30,30 @@ public class RegistrationFormTest {
         // verify last name is required message is displayed
         Assert.assertTrue(driver.findElement(By.xpath("//small[.='last name is required']")).isDisplayed());
     }
+    @Test
+     public void test2() {
+        // enter value in firstname
+        driver.findElement(By.name("firstname")).sendKeys("John");
+        // enter value in lastname
+        driver.findElement(By.name("lastname")).sendKeys("Doe");
+        //click sign up
+        driver.findElement(By.id("wooden_spoon")).click();
+        // verify email is required message is displayed
+        Assert.assertTrue(driver.findElement(By.xpath("//small[.='username is required']")).isDisplayed());
 
+    }
+    @Test
+    public void test3() {
+     // enter value in firstname
+     driver.findElement(By.name("firstname")).sendKeys("John");
+     // enter value in lastname
+        driver.findElement(By.name("lastname")).sendKeys("Doe");
+      // enter value in usename
+        driver.findElement(By.name("username")).sendKeys("johndoe");
+      // click sign up
+      driver.findElement(By.id("wooden_spoon")).click();
+      // verify email is required message is displayed
+        Assert.assertTrue(driver.findElement(By.xpath("//small[.='email address is required']")).isDisplayed());
+
+    }
 }
